@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+	  <script src="https://code.jquery.com/jquery-3.2.1.min.js?{{ cache_id }}"></script>
+              <script src="static/scripts/2-hbnb.js?{{ cache_id }}"></script>
+	  <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
@@ -12,7 +14,8 @@
   </head>
   <body>
     <header>
-      <div class="logo"></div>
+	    <div id="api_status" align="right" style="width: 40px; height: 40px; background-color: #cccccc; position: absolute; right: 30px" class="available"></div>
+	    <div class="logo"></div>
     </header>
     <div class="container">
       <section class="filters">
@@ -40,7 +43,10 @@
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li>{{ amenity.name }}</li>
+	      <li>              
+		      <input type="checkbox {margin-right:10px}" data-id=":amenity_id" data-name=":amenity_name">
+		      {{ amenity.name }}
+	      </li>
 	      {% endfor %}
 	    </ul>
 	  </div>
